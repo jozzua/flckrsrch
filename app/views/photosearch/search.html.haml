@@ -1,0 +1,11 @@
+%h1 Flickr Search
+
+%p Please enter your search term below
+
+%form{action:'/show', method:'post'}
+  %p
+    %label Search Term  
+    %input{name:'search_term', type:'text', required:'true' }
+
+  %p
+    %input{name:'submit', type:'submit'}

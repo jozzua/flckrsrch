@@ -5,6 +5,8 @@ gem 'flickraw'
 group :development, :test do
   gem 'sqlite3', '1.3.7'
   gem 'rspec-rails', '2.13.1'
+  gem 'haml'
+  gem 'sass'
 end
 
 group :test do
