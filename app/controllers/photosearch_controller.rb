@@ -5,7 +5,7 @@ class PhotosearchController < ApplicationController
   end
 
   def show
-    @show_photos = flickr.photos.search(tags: params[:search_term], page: 1, per_page: 10, content_type: 1)
+    @show_photos = flickr.photos.search(tags: params[:search_term], page: params[:page], per_page: 10, content_type: 1)
     add_url
   end
 

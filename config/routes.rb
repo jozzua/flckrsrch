@@ -2,7 +2,8 @@ Flickrsearch::Application.routes.draw do
 
   root  'photosearch#search'
 
-  post '/show', to: 'photosearch#show'
+  get 'show', to: 'photosearch#show'
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

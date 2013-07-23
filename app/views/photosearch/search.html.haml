@@ -2,10 +2,10 @@
 
 %p Please enter your search term below
 
-%form{action:'/show', method:'post'}
+%form{action:'/show', method:'get'}
   %p
     %label Search Term  
-    %input{name:'search_term', type:'text', required:'true' }
+    %input{name:'search_term', type:'text', required:'true', page:'1'}
 
   %p
-    %input{name:'submit', type:'submit'}
+    %input{type:'submit'}
