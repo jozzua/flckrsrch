@@ -1,7 +1,7 @@
 - if @show_photos.count > 0
   %ul
     -@show_photos.each do |photo|
-      %li
+      %li.thumbs
         %img{:src => photo['url']}
 - else 
   %p No photos found!
