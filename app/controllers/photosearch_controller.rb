@@ -1,0 +1,2 @@
+class PhotosearchController < ApplicationController
+end
