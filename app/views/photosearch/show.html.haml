@@ -1,12 +1,14 @@
 - if @show_photos.count > 0
-  %p
-    =@show_photos.pages
-    Pages
-  %a 
-    =@show_photos.page.next
-  %ul
-    -@show_photos.each do |photo|
-      %li.thumbs
-        %img{:src => photo['url']}
+  -@show_photos.each do |photo|
+    - photo_info = flickr.photos.getInfo(:photo_id => photo.id) 
+    - photo_url_b = FlickRaw.url_b(photo_info) 
+    - photo_url_s = FlickRaw.url_s(photo_info) 
+    %a{:href=> photo_url_b, :class=>"thumbs"}                                                                                            
+      %img{:src => photo_url_s}  
 - else 
   %p No photos found!
+
+%hr.clear
+  == Page: #{@show_photos.page} / #{@show_photos.pages} --
+  == #{link_to("« previous", show_path(:search_term => @searchterm, :page => @show_photos.page - 1)) + " - " if @show_photos.page > 1}
+  = link_to "next »", show_path(:search_term => @searchterm, :page => @show_photos.page + 1) if @show_photos.page < @show_photos.pages
