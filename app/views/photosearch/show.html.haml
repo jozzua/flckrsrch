@@ -1,5 +1,9 @@
 - if @show_photos.count > 0
-  
+  %p
+    =@show_photos.pages
+    Pages
+  %a 
+    =@show_photos.page.next
   %ul
     -@show_photos.each do |photo|
       %li.thumbs
