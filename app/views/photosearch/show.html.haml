@@ -1,10 +1,14 @@
+%h1 
+  Search results for: 
+  = session[:searchterm]
 - if @show_photos.count > 0
   -@show_photos.each do |photo|
     - photo_info = flickr.photos.getInfo(:photo_id => photo.id) 
-    - photo_url_b = FlickRaw.url_b(photo_info) 
     - photo_url_s = FlickRaw.url_s(photo_info) 
-    %a{:href=> photo_url_b, :class=>"thumbs"}                                                                                            
-      %img{:src => photo_url_s}  
+    - photo_url_b = FlickRaw.url_b(photo_info) 
+    %a{:href=> photo_url_b, :class=>"thumbs", "data-toggle" => "modal" }                                                                                            
+      %img{:src => photo_url_s}
+      
 - else 
   %p No photos found!
 

@@ -7,9 +7,11 @@ body {
   margin: 10px;
 }
 
-.thumbs {
+.thumbs img{
+  padding:2px;
+  &:hover {
+    background: #ccc;
+  }
 }
 
-.no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
 
