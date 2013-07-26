@@ -8,6 +8,12 @@
     - photo_url_b = FlickRaw.url_b(photo_info) 
     %a{:href=> photo_url_b, :class=>"thumbs", "data-toggle" => "modal" }                                                                                            
       %img{:src => photo_url_s}
+      #myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+        .modal-header
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+        .modal-body
+          %img{:src => photo_url_b}
+            
       
 - else 
   %p No photos found!
