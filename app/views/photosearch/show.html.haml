@@ -1,7 +1,6 @@
 %h1 
-  Search results for: 
-  = session[:searchterm]
-- if @show_photos.count > 0
+  = params[:search_term]
+- if @show_photos.count > 0 and !params[:search_term].blank?
   -@show_photos.each do |photo|
     - photo_info = flickr.photos.getInfo(:photo_id => photo.id) 
     - photo_url_s = FlickRaw.url_s(photo_info) 
