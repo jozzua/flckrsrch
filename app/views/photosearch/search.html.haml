@@ -1,7 +1,4 @@
 %form{action:'/', method:'get', id:'search_form'}
-  %label Search Term  
-  %input{name:'search_term', type:'text', required:'true', page:'1'}
-  %p
-    %input{type:'submit'}
-
-= render "show"
+  %input{name:'search_term', type:'text', required:'true', page:'1', placeholder:'Enter search term'}
+#results
+  = render "show"
