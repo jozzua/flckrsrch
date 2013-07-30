@@ -16,24 +16,3 @@
 //= require_tree .
 //= require bootstrap
 
-
-$('#search_form').submit(function () {
-  if($("#search").val().length === 0) {
-    $(".alert").alert();
-    $('#search_form').after('<div class=\"alert fade in\" style=\"clear:both\"><strong>Enter something!</strong></div>');
-    $('.alert').delay(2000).fadeOut(); 
-    return false;
-  }
-  else {
-    $.get(this.action, $(this).serialize(), null, 'script');
-    return false;
-  }
-
-});
-
-$(document).ajaxStart(function() {
-  $('#loading').show();
-});
-$(document).ajaxStop(function() {
-  $('#loading').hide();
-});
