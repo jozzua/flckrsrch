@@ -16,6 +16,7 @@
             %img{:src => photo_url_b}
 
     %hr.clear
-      == Page: #{@show_photos.page} / #{@show_photos.pages} --
-      == #{link_to("« previous", root_path(:search_term => params[:search_term], :page => @show_photos.page - 1)) + " - " if @show_photos.page > 1}
-      = link_to "next »", root_path(:search_term => params[:search_term], :page => @show_photos.page + 1) if @show_photos.page < @show_photos.pages
+      .pagination
+        == Page: #{@show_photos.page} / #{@show_photos.pages} --
+        == #{link_to("« previous", root_path(:search_term => params[:search_term], :page => @show_photos.page - 1)) + " - " if @show_photos.page > 1}
+        = link_to "next »", root_path(:search_term => params[:search_term], :page => @show_photos.page + 1) if @show_photos.page < @show_photos.pages

@@ -1,6 +1,8 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
+
+
 $("#search_form").submit ->
   if $("input").val().length is 0
     $(".alert").alert()
@@ -15,9 +17,5 @@ $(document).keypress (e) ->
   if $("input").val().length > 0
     $("#loading").show()  if e.which is 13
 
-
-$(document).ajaxStart ->
+$(".pagination").click ->
   $("#loading").show()
-
-$(document).ajaxStop ->
-  $("#loading").hide()
